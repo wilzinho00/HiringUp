@@ -1,4 +1,4 @@
-# 🚀 Job Navigator — Sistema de Vagas e Empregos
+# 🚀 Hiring Up — Sistema de Vagas e Empregos
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-red)
 ![Front-End](https://img.shields.io/badge/Front--End-HTML%20%7C%20CSS%20%7C%20JS-blue)
@@ -6,7 +6,7 @@
 
 ## 📌 Sobre o Projeto
 
-O **Job Navigator** é um sistema web de vagas e empregos desenvolvido como Projeto Integrador (PI) da Fatec Itapira.
+O **Hiring Up** é um sistema web de vagas e empregos desenvolvido como Projeto Integrador (PI) da Fatec Itapira.
 
 O objetivo do sistema é conectar estudantes e empresas através de uma plataforma moderna, responsiva e intuitiva para divulgação de vagas de estágio e emprego.
 
@@ -55,7 +55,7 @@ Empresas
 # 📂 Estrutura de Páginas
 
 ```text
-📁 Job Navigator
+📁 Hiring Up
  ├── index.html
  ├── login.html
  ├── cadastro.html
