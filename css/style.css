@@ -266,63 +266,62 @@ img{
 }
 
 /* =========================
-   SEARCH BOX
+   SEARCH BOX (UPGRADE PRO)
 ========================= */
 
 .search-box{
     margin:45px auto 0;
-
     background:rgba(255,255,255,0.92);
-
     backdrop-filter:blur(14px);
 
-    padding:22px;
-
+    padding:18px;
     border-radius:28px;
-
-    display:flex;
-    align-items:center;
-    gap:18px;
-
-    box-shadow:0 30px 70px rgba(0,0,0,.18);
-
-    border:1px solid rgba(255,255,255,.35);
-
-    max-width:980px;
-
-    transition:.3s ease;
-}
-
-.search-box:hover{
-    transform:translateY(-4px);
-}
-
-.search-input{
-    flex:1;
 
     display:flex;
     align-items:center;
     gap:14px;
 
-    border:1px solid #d8e0f4;
+    box-shadow:0 30px 70px rgba(0,0,0,.18);
+    border:1px solid rgba(255,255,255,.35);
 
+    max-width:980px;
+    width:100%;
+
+    transition:.3s ease;
+}
+
+.search-box:hover{
+    transform:translateY(-3px);
+}
+
+/* INPUTS */
+.search-input{
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    border:1px solid #d8e0f4;
     border-radius:18px;
 
-    padding:14px 18px;
-
+    padding:14px 16px;
     background:#f7f9ff;
 
-    transition:.3s;
+    transition:.25s ease;
+
+    min-width:0;
 }
 
 .search-input:focus-within{
     border-color:#173ea5;
-    box-shadow:0 0 0 4px rgba(23,62,165,.08);
+    box-shadow:0 0 0 4px rgba(23,62,165,.10);
+    background:#fff;
 }
 
 .search-input i{
     color:#173ea5;
-    font-size:18px;
+    font-size:16px;
+    flex-shrink:0;
 }
 
 .search-input input{
@@ -330,19 +329,27 @@ img{
     outline:none;
     width:100%;
     background:transparent;
+
     color:#1b2646;
     font-size:15px;
 }
 
+/* BOTÃO */
 .search-box button{
     background:#173ea5;
     border:none;
     color:white;
-    padding:15px 34px;
+
+    padding:14px 26px;
     border-radius:16px;
+
     font-weight:700;
     letter-spacing:.3px;
-    transition:.3s;
+
+    white-space:nowrap;
+
+    transition:.3s ease;
+
     box-shadow:0 16px 28px rgba(23,62,165,.22);
 }
 
@@ -350,6 +357,21 @@ img{
     transform:translateY(-2px);
     background:#224bc0;
 }
+
+/* =========================
+   RESPONSIVO DA BUSCA
+========================= */
+
+@media (max-width: 992px){
+    .search-box{
+        flex-wrap:wrap;
+    }
+
+    .search-box button{
+        width:100%;
+    }
+}
+
 
 /* =========================
    JOBS
@@ -788,7 +810,7 @@ img{
 }
 
 /* =========================
-   RESPONSIVIDADE GERAL
+   RESPONSIVIDADE 
 ========================= */
 
 *{
