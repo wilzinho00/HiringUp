@@ -787,7 +787,38 @@ img{
     font-size:.95rem;
 }
 
-/* RESPONSIVO */
+/* =========================
+   RESPONSIVIDADE GERAL
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   DESKTOP GRANDE
+========================= */
+
+.auth-container{
+    width:100%;
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+
+/* =========================
+   NOTEBOOK / TABLET
+========================= */
 
 @media(max-width:992px){
 
@@ -801,9 +832,15 @@ img{
 
     .auth-right{
         padding:50px 35px;
+        width:100%;
     }
 
 }
+
+
+/* =========================
+   CELULAR
+========================= */
 
 @media(max-width:576px){
 
@@ -817,6 +854,59 @@ img{
 
     .auth-right h1{
         font-size:34px;
+        line-height:1.2;
+    }
+
+    .auth-right p{
+        font-size:15px;
+    }
+
+    input,
+    button,
+    select{
+        width:100%;
     }
 
 }
+
+
+/* =========================
+   CELULARES MUITO PEQUENOS
+========================= */
+
+@media(max-width:360px){
+
+    .auth-right{
+        padding:30px 18px;
+    }
+
+    .auth-right h1{
+        font-size:28px;
+    }
+
+    .auth-right p{
+        font-size:14px;
+    }
+
+}
+
+
+/* =========================
+   TELAS MUITO GRANDES
+========================= */
+
+@media(min-width:1600px){
+
+    .auth-container{
+        max-width:1600px;
+        margin:auto;
+    }
+
+    .auth-right h1{
+        font-size:58px;
+    }
+
+}
+
+
+
