@@ -1,4 +1,4 @@
-const storageKey = 'jobnavigator_user';
+const storageKey = 'hiringup_user';
 
 function renderAlert(target, message, type = 'success') {
   if (!target) {
