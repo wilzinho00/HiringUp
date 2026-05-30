@@ -39,17 +39,6 @@ function initSearch(buttonId, keywordId, locationId, feedbackId) {
   });
 }
 
-function initDetailButtons() {
-  document.querySelectorAll('.details-btn').forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      const card = button.closest('.job-card');
-      const title = card?.querySelector('h5, h4')?.textContent || 'vaga';
-      const container = card?.closest('.container') || document.body;
-      renderAlert(container, `Simulação: detalhes sobre "${title}" exibidos com sucesso.`, 'success');
-    });
-  });
-}
 
 function initRegisterForm() {
   const form = document.getElementById('register-form');
@@ -140,7 +129,7 @@ function initLoginForm() {
 window.addEventListener('DOMContentLoaded', () => {
   initSearch('home-search-button', 'home-search-keyword', 'home-search-location', 'home-search-feedback');
   initSearch('jobs-search-button', 'jobs-search-keyword', 'jobs-search-location', 'jobs-search-feedback');
-  initDetailButtons();
+  
   initRegisterForm();
   initLoginForm();
 });
