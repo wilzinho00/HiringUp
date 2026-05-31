@@ -51,27 +51,40 @@
       <div class="container">
         <div class="card shadow-lg border-0">
           <div class="card-body p-4 p-lg-5">
-            <form>
+            <form id="curriculo-form">
+              <div id="curriculo-feedback" class="mb-4"></div>
+
               <!-- DADOS PESSOAIS -->
 
               <h3 class="mb-4">Dados Pessoais</h3>
 
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label">Nome Completo</label>
-                  <input type="text" class="form-control" />
+                  <label class="form-label">Nome Completo </label>
+                  <input
+                    id="curriculo-nome"
+                    type="text"
+                    class="form-control"
+                    required />
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label">E-mail</label>
-                  <input type="email" class="form-control" />
+                  <label class="form-label">E-mail </label>
+                  <input
+                    id="curriculo-email"
+                    type="email"
+                    class="form-control"
+                    required />
                 </div>
 
                 <div class="col-md-4">
-                  <label class="form-label">Telefone</label>
-                  <input type="tel" class="form-control" />
+                  <label class="form-label">Telefone </label>
+                  <input
+                    id="curriculo-telefone"
+                    type="tel"
+                    class="form-control"
+                    required />
                 </div>
-
                 <div class="col-md-4">
                   <label class="form-label">CEP</label>
                   <input type="text" class="form-control" />
@@ -213,16 +226,30 @@
 
               <select class="form-select">
                 <option>⭐ Estagiário</option>
+
                 <option>Desenvolvimento Web</option>
-                <option>Front-End</option>
-                <option>Back-End</option>
+                <option>Desenvolvedor Front-End</option>
+                <option>Desenvolvedor Back-End</option>
                 <option>Full Stack</option>
-                <option>UX/UI Design</option>
+                <option>Design Gráfico</option>
+                <option>UI/UX Design</option>
                 <option>Marketing Digital</option>
-                <option>Análise de Dados</option>
-                <option>Power BI</option>
-                <option>Cloud Computing</option>
-                <option>Segurança da Informação</option>
+                <option>Social Media</option>
+                <option>Suporte Técnico</option>
+                <option>Analista de Sistemas</option>
+                <option>Administrador</option>
+                <option>Recursos Humanos</option>
+                <option>Financeiro</option>
+                <option>Atendimento ao Cliente</option>
+                <option>Vendas</option>
+                <option>Logística</option>
+                <option>Engenharia de Software</option>
+                <option>Banco de Dados</option>
+                <option>Cyber Segurança</option>
+                <option>QA / Testes</option>
+                <option>DevOps</option>
+                <option>Data Science</option>
+                <option>Outras Opções</option>
               </select>
 
               <hr class="my-5" />
@@ -245,5 +272,6 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
