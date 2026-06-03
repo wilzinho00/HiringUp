@@ -63,11 +63,73 @@ function initSearch(buttonId, keywordId, locationId, feedbackId) {
     return;
   }
 
+  const updateButtonState = () => {
+    const k = keywordInput.value.trim();
+    const l = locationInput.value.trim();
+    button.disabled = !(k && l);
+
+    // remove inline invalid hint as user types
+    if (k) keywordInput.classList.remove('is-invalid');
+    if (l) locationInput.classList.remove('is-invalid');
+  };
+
+  // initial state
+  updateButtonState();
+
+  // react to user typing
+  keywordInput.addEventListener('input', updateButtonState);
+  locationInput.addEventListener('input', updateButtonState);
+
+  // prevent Enter from submitting the page unless both fields are filled
+  [keywordInput, locationInput].forEach((el) => {
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const k = keywordInput.value.trim();
+        const l = locationInput.value.trim();
+        if (k && l) {
+          button.click();
+        } else {
+          if (!k) keywordInput.classList.add('is-invalid');
+          if (!l) locationInput.classList.add('is-invalid');
+          renderAlert(
+            feedback,
+            'Por favor, preencha ambos os campos antes de pesquisar.',
+            'warning'
+          );
+        }
+      }
+    });
+  });
+
   button.addEventListener('click', () => {
+    const keyword = keywordInput.value.trim();
+    const location = locationInput.value.trim();
+
+    const missing = [];
+    if (!keyword) missing.push('palavra-chave');
+    if (!location) missing.push('localidade');
+
+    if (missing.length) {
+      if (!keyword) keywordInput.classList.add('is-invalid');
+      if (!location) locationInput.classList.add('is-invalid');
+      renderAlert(
+        feedback,
+        `Preencha ${missing.join(' e ')} antes de pesquisar.`,
+        'warning'
+      );
+      const firstMissing = !keyword ? keywordInput : locationInput;
+      firstMissing.focus();
+      return;
+    }
+
+    // clear any validation markers
+    keywordInput.classList.remove('is-invalid');
+    locationInput.classList.remove('is-invalid');
 
     handleSearch(
-      keywordInput.value,
-      locationInput.value,
+      keyword,
+      location,
       feedbackId
     );
 
