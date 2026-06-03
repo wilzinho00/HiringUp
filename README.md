@@ -54,18 +54,32 @@ Empresas
 
 # 📂 Estrutura de Páginas
 
-```text
 📁 Hiring Up
- ├── index.html
- ├── login.html
- ├── cadastro.html
- ├── vagas.html
- ├── empresas.html
- ├── sobrenos.html
- ├── css/
- ├── js/
- └── img/
-```
+├── index.html
+├── login.html
+├── cadastro.html
+├── vagas.html
+├── empresas.html
+├── sobrenos.html
+
+├── nova-vaga.html ✅ Publicação de vagas
+├── candidatura.html ✅ Candidatar-se à vaga
+├── acompanhamento.html ✅ Acompanhar candidatura
+├── relatorios.html ✅ Relatórios gerenciais
+
+├── google.html ✅ Detalhes da vaga
+├── spotify.html ✅ Detalhes da vaga
+├── mercadolivre02.html ✅ Detalhes da vaga
+├── nubank.html ✅ Detalhes da vaga
+├── amazon.html ✅ Detalhes da vaga
+
+├── css/
+│ └── style.css
+
+├── js/
+│ └── script.js
+
+└── img/
 
 ---
 
@@ -152,4 +166,4 @@ Adicione aqui futuramente prints do sistema.
 
 # 📄 Licença
 
-Projeto acadêmico desenvolvido para fins educacionais.
+Projeto acadêmico desenvolvido para fins educacionais, Fatec - Itapira SP.
