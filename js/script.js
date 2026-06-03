@@ -308,6 +308,269 @@ function initCurriculoForm() {
 
 }
 
+const applicationsKey = 'hiringup_applications';
+const newJobsKey = 'hiringup_new_jobs';
+
+function saveNewJob(job) {
+  const existing = JSON.parse(
+    localStorage.getItem(newJobsKey) || '[]'
+  );
+
+  existing.unshift(job);
+  localStorage.setItem(newJobsKey, JSON.stringify(existing));
+}
+
+function getNewJobs() {
+  return JSON.parse(
+    localStorage.getItem(newJobsKey) || '[]'
+  );
+}
+
+function saveApplication(application) {
+  const existing = JSON.parse(
+    localStorage.getItem(applicationsKey) || '[]'
+  );
+
+  existing.unshift(application);
+  localStorage.setItem(applicationsKey, JSON.stringify(existing));
+}
+
+function getSavedApplications() {
+  return JSON.parse(
+    localStorage.getItem(applicationsKey) || '[]'
+  );
+}
+
+function renderApplicationStatus(actionsContainer, application) {
+  if (!actionsContainer || !application) return;
+
+  actionsContainer.innerHTML = `
+    <div class="card shadow-sm border-0 mt-4">
+      <div class="card-body">
+        <h5 class="mb-3">Painel: minha candidatura</h5>
+        <p class="mb-2"><strong>Vaga:</strong> ${application.title}</p>
+        <p class="mb-2"><strong>Empresa:</strong> ${application.company}</p>
+        <div class="badge bg-success mb-3">${application.status}</div>
+        <p class="mb-3">Sua candidatura foi recebida e está sendo processada. Você pode acompanhar o status das suas candidaturas no painel.</p>
+        <a href="acompanhamento.html" class="btn btn-primary">Ver meu acompanhamento</a>
+      </div>
+    </div>
+  `;
+}
+
+function renderApplicationsTable() {
+  const tbody = document.getElementById('applications-table-body');
+  const applications = getSavedApplications();
+
+  if (!tbody || !applications.length) return;
+
+  const rows = applications.map((application) => {
+    const badgeClass = application.status === 'Enviada com sucesso'
+      ? 'status-aprovado'
+      : 'status-analise';
+
+    return `
+      <tr>
+        <td>${application.title}</td>
+        <td>${application.company}</td>
+        <td>
+          <span class="status-badge ${badgeClass}">
+            ${application.status}
+          </span>
+        </td>
+      </tr>
+    `;
+  }).join('');
+
+  tbody.insertAdjacentHTML('afterbegin', rows);
+}
+
+function initCandidaturaForm() {
+  const form = document.getElementById('candidatura-form');
+  const feedback = document.getElementById('candidatura-feedback');
+  const actions = document.getElementById('candidatura-actions');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const nome = document.getElementById('candidato-nome')?.value.trim();
+    const email = document.getElementById('candidato-email')?.value.trim();
+    const telefone = document.getElementById('candidato-telefone')?.value.trim();
+    const apresentacao = document.getElementById('candidato-apresentacao')?.value.trim();
+
+    if (!nome || !email || !telefone) {
+      renderAlert(
+        feedback,
+        'Por favor, preencha nome, e-mail e telefone para enviar sua candidatura.',
+        'warning'
+      );
+      return;
+    }
+
+    const application = {
+      title: 'Desenvolvedor Front-End',
+      company: 'Google Brasil',
+      status: 'Enviada com sucesso',
+      submittedAt: new Date().toLocaleDateString('pt-BR'),
+      candidate: nome,
+      email,
+      telefone,
+      apresentacao
+    };
+
+    saveApplication(application);
+
+    renderAlert(
+      feedback,
+      'Enviada com sucesso.',
+      'success'
+    );
+
+    renderApplicationStatus(actions, application);
+    form.reset();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  const latest = getSavedApplications()[0];
+  if (latest) {
+    renderApplicationStatus(actions, latest);
+  }
+}
+
+function loadNewJobCards() {
+  const container = document.querySelector('.jobs-section .container .row');
+  const newJobs = getNewJobs();
+
+  if (!container || !newJobs.length) return;
+
+  const newCards = newJobs.map((job) => {
+    return `
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5>${job.title}</h5>
+              <p>${job.company}</p>
+            </div>
+            <span class="badge bg-info">${job.status}</span>
+          </div>
+          <p class="text-muted">${job.description}</p>
+          <div class="salary">${job.salary}</div>
+          <button class="details-btn" onclick="alert('Nova vaga de ${job.company}!\\n\\nCargo: ${job.title}\\nSalário: ${job.salary}\\n\\nDescrição:\\n${job.description}')">
+            Ver Detalhes
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.insertAdjacentHTML('beforeend', newCards);
+}
+
+function atualizarCandidaturas() {
+  const applications = getSavedApplications();
+  
+  if (!applications.length) {
+    alert('Nenhuma candidatura para atualizar.');
+    return;
+  }
+
+  const statusCiclo = {
+    'em-analise': 'em-entrevista',
+    'em-entrevista': 'aprovado',
+    'aprovado': 'em-analise'
+  };
+
+  applications.forEach(app => {
+    const statusAtual = app.status || 'em-analise';
+    app.status = statusCiclo[statusAtual] || 'em-analise';
+  });
+
+  localStorage.setItem(applicationsKey, JSON.stringify(applications));
+  
+  renderAlert(
+    document.querySelector('.jobs-section .container'),
+    '✅ Candidaturas atualizadas! Os status foram modificados conforme o andamento dos processos.',
+    'success'
+  );
+
+  setTimeout(() => {
+    window.location.reload();
+  }, 2000);
+}
+
+function confirmarLimpar() {
+  const confirmacao = confirm(
+    '⚠️ Tem certeza que deseja limpar todo o histórico de candidaturas?\n\nEsta ação é irreversível!'
+  );
+
+  if (confirmacao) {
+    localStorage.removeItem(applicationsKey);
+    
+    renderAlert(
+      document.querySelector('.jobs-section .container'),
+      '🗑️ Histórico de candidaturas foi removido com sucesso.',
+      'warning'
+    );
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  }
+}
+
+function loadNewJobCards() {
+  const container = document.querySelector('.jobs-section .container .row');
+  const newJobs = getNewJobs();
+
+  if (!container || !newJobs.length) return;
+
+  const newCards = newJobs.map((job) => {
+    return `
+      <div class="col-lg-4 col-md-6">
+        <div class="job-card">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+              <h5>${job.title}</h5>
+              <p>${job.company}</p>
+            </div>
+            <span class="badge bg-info">${job.status}</span>
+          </div>
+          <p class="text-muted">${job.description}</p>
+          <div class="salary">${job.salary}</div>
+          <button class="details-btn" onclick="alert('Nova vaga de ${job.company}!\\n\\nCargo: ${job.title}\\nSalário: ${job.salary}\\n\\nDescrição:\\n${job.description}')">
+            Ver Detalhes
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.insertAdjacentHTML('beforeend', newCards);
+}
+
+function setActiveMenuLink() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const menuLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+  menuLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    if (currentPage === href || (currentPage === 'index.html' && href === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
 function initEmpresaForm() {
 
   const form = document.getElementById('empresa-form');
@@ -326,12 +589,15 @@ function initEmpresaForm() {
       document.getElementById('empresa-email')?.value.trim();
 
     const cargo =
-      document.getElementById('empresa-cargo')?.value.trim();
-
-    const vaga =
       document.getElementById('empresa-vaga')?.value.trim();
 
-    if (!nome || !email || !cargo || !vaga) {
+    const salario =
+      document.getElementById('empresa-salario')?.value.trim();
+
+    const descricaoVaga =
+      document.getElementById('empresa-descricao-vaga')?.value.trim();
+
+    if (!nome || !email || !cargo || !salario || !descricaoVaga) {
 
       renderAlert(
         feedback,
@@ -342,9 +608,21 @@ function initEmpresaForm() {
       return;
     }
 
+    const newJob = {
+      title: cargo,
+      company: nome,
+      salary: salario,
+      description: descricaoVaga,
+      status: 'Remoto',
+      publishedAt: new Date().toLocaleDateString('pt-BR'),
+      companyEmail: email
+    };
+
+    saveNewJob(newJob);
+
     renderAlert(
       feedback,
-      'Vaga publicada com sucesso! Sua empresa agora está anunciando na Hiring UP.',
+      `Vaga publicada com sucesso! "${cargo}" foi adicionada ao site Hiring UP e está disponível para candidatos.`,
       'success'
     );
 
@@ -355,6 +633,10 @@ function initEmpresaForm() {
       behavior: 'smooth'
     });
 
+    setTimeout(() => {
+      window.location.href = 'vagas.html';
+    }, 2000);
+
   });
 
 }
@@ -362,7 +644,7 @@ function initEmpresaForm() {
 
 /* =========================
    INICIALIZAÇÃO
-========================= */
+======================== */
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -382,7 +664,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initRegisterForm();
   initLoginForm();
+  initCandidaturaForm();
   initCurriculoForm();
   initEmpresaForm();
+  renderApplicationsTable();
+  loadNewJobCards();
+  setActiveMenuLink();
 
 });

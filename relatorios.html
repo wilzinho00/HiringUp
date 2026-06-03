@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Empresas - Hiring UP</title>
+    <title>Relatórios - Hiring UP</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet" />
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -19,7 +18,7 @@
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold logo" href="index.html">
-          <h1>Hiring <span class="brand-highlight">UP</span></h1>
+          Hiring <span class="brand-highlight">UP</span>
         </a>
 
         <button
@@ -51,105 +50,95 @@
               <a class="nav-link" href="acompanhamento.html">Acompanhamento</a>
             </li>
           </ul>
-
           <div class="d-flex gap-3 align-items-center">
-            <a href="nova-vaga.html" class="btn btn-primary cadastro-btn">
-              Anuncie Uma Vaga
+            <a href="cadastro.html" class="btn btn-primary cadastro-btn">
+              Cadastre Grátis
             </a>
           </div>
         </div>
       </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero-empresas py-5">
-      <div class="container text-center">
-        <h1 class="fw-bold">Empresas Parceiras</h1>
-
-        <p class="mt-3">
-          Grandes empresas recrutando talentos pela Hiring
-          <span class="brand-highlight">UP.</span>
-        </p>
-      </div>
-    </section>
-
-    <!-- EMPRESAS -->
     <section class="jobs-section">
       <div class="container">
-        <div class="row g-4">
-          <!-- EMPRESA -->
-          <div class="col-lg-4 col-md-6">
-            <div class="job-card text-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
-                alt="Google logo"
-                width="80"
-                class="mb-4" />
+        <div class="alert alert-info rounded-4 shadow-sm mb-4">
+          <strong>Acesso exclusivo para empresas.</strong> Utilize este painel
+          para acompanhar resultados e cadastrar novas vagas.
+        </div>
+        <div class="d-flex justify-content-end mb-4">
+          <a href="nova-vaga.html" class="btn cadastro-btn"
+            >Cadastrar Nova Vaga</a
+          >
+        </div>
+        <h2 class="section-title">Relatórios Gerenciais</h2>
 
-              <h4>Google</h4>
-
-              <p class="text-muted">Tecnologia e inovação.</p>
-
-              <!-- Google -->
-              <a
-                href="https://www.google.com/about/careers/applications/"
-                target="_blank"
-                class="details-btn">
-                Ver Empresa
-              </a>
+        <div class="row g-4 mb-5">
+          <div class="col-md-3">
+            <div class="dashboard-card text-center">
+              <div class="dashboard-number">18</div>
+              <p>Vagas Ativas</p>
             </div>
           </div>
 
-          <!-- EMPRESA -->
-          <div class="col-lg-4 col-md-6">
-            <div class="job-card text-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/174/174872.png"
-                alt="Spotify logo"
-                width="80"
-                class="mb-4" />
-
-              <h4>Spotify</h4>
-
-              <p class="text-muted">Streaming e mídia digital.</p>
-
-              <!-- Spotify -->
-              <a
-                href="https://www.lifeatspotify.com/jobs"
-                target="_blank"
-                class="details-btn">
-                Ver Empresa
-              </a>
+          <div class="col-md-3">
+            <div class="dashboard-card text-center">
+              <div class="dashboard-number">124</div>
+              <p>Candidatos</p>
             </div>
           </div>
 
-          <!-- EMPRESA -->
-          <div class="col-lg-4 col-md-6">
-            <div class="job-card text-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                alt="LinkedIn logo"
-                width="80"
-                class="mb-4" />
-
-              <h4>LinkedIn</h4>
-
-              <p class="text-muted">Networking profissional.</p>
-
-              <!-- LinkedIn -->
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                class="details-btn">
-                Ver Empresa
-              </a>
+          <div class="col-md-3">
+            <div class="dashboard-card text-center">
+              <div class="dashboard-number">34</div>
+              <p>Entrevistas</p>
             </div>
           </div>
+
+          <div class="col-md-3">
+            <div class="dashboard-card text-center">
+              <div class="dashboard-number">12</div>
+              <p>Contratações</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h4 class="mb-4">Resumo das Vagas</h4>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Vaga</th>
+                <th>Candidatos</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Front-End</td>
+                <td>28</td>
+              </tr>
+
+              <tr>
+                <td>Analista de Dados</td>
+                <td>19</td>
+              </tr>
+
+              <tr>
+                <td>UX/UI Designer</td>
+                <td>14</td>
+              </tr>
+
+              <tr>
+                <td>Dev Full Stack</td>
+                <td>32</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="row">
