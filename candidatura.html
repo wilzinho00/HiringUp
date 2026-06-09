@@ -13,14 +13,12 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold logo" href="index.html">
-          Hiring <span class="brand-highlight">UP</span>
+          <h1>Hiring <span class="brand-highlight">UP</span></h1>
         </a>
-
         <button
           class="navbar-toggler"
           type="button"
@@ -28,7 +26,6 @@
           data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
@@ -40,108 +37,234 @@
             <li class="nav-item">
               <a class="nav-link" href="empresas.html">Empresas</a>
             </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="portalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Portal Empresarial</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="portalDropdown">
+                <li>
+                  <a class="dropdown-item" href="nova-vaga.html"
+                    >Publicar Vaga</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="relatorios.html">Relatórios</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="perfilDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Meu Perfil</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                <li>
+                  <a class="dropdown-item" href="perfil.html">Dashboard</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="cadastro.html">Currículo</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="acompanhamento.html"
+                    >Minhas Candidaturas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="perfil.html#configuracoes"
+                    >Configurações</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="login.html">Sair</a></li>
+              </ul>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="nova-vaga.html">Publicar Vagas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="acompanhamento.html">Acompanhamento</a>
-            </li>
           </ul>
           <div class="d-flex gap-3 align-items-center">
-            <a href="cadastro.html" class="btn btn-primary cadastro-btn">
-              Cadastre Grátis
-            </a>
+            <a href="login.html" class="btn btn-outline-primary cadastro-btn"
+              >Entrar</a
+            >
           </div>
         </div>
       </div>
     </nav>
 
-    <section class="jobs-section">
+    <main class="py-5">
       <div class="container">
-        <div class="form-card">
-          <h2 class="form-title">Candidatura à Vaga</h2>
-
-          <div id="candidatura-feedback"></div>
-
-          <div class="alert alert-primary">
-            Desenvolvedor Front-End - Google Brasil
+        <div class="row align-items-center gy-4 mb-5">
+          <div class="col-lg-6">
+            <h1 class="fw-bold">Candidatura Profissional</h1>
+            <p class="text-muted">
+              Preencha seus dados, envie seu currículo e acompanhe seu processo
+              seletivo.
+            </p>
           </div>
-
-          <form id="candidatura-form">
-            <input
-              id="candidato-nome"
-              type="text"
-              class="form-control mb-3"
-              placeholder="Nome Completo" />
-
-            <input
-              id="candidato-email"
-              type="email"
-              class="form-control mb-3"
-              placeholder="E-mail" />
-
-            <input
-              id="candidato-telefone"
-              type="tel"
-              class="form-control mb-3"
-              placeholder="Telefone" />
-
-            <input
-              id="candidato-curriculo"
-              type="file"
-              class="form-control mb-3" />
-
-            <textarea
-              id="candidato-apresentacao"
-              class="form-control mb-4"
-              rows="5"
-              placeholder="Carta de Apresentação"></textarea>
-
-            <button type="submit" class="btn cadastro-btn w-100">
-              Enviar Candidatura
-            </button>
-          </form>
-
-          <div id="candidatura-actions"></div>
+          <div class="col-lg-6 text-lg-end">
+            <a href="acompanhamento.html" class="btn btn-outline-primary"
+              >Acompanhar candidatura</a
+            >
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-xl-7">
+            <div class="card rounded-4 shadow-sm border-0 p-4">
+              <h4 class="mb-4">Formulário de Candidatura</h4>
+              <div id="candidatura-feedback"></div>
+              <form id="candidatura-form">
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nome</label>
+                    <input
+                      id="candidato-nome"
+                      type="text"
+                      class="form-control"
+                      placeholder="Seu nome completo" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">E-mail</label>
+                    <input
+                      id="candidato-email"
+                      type="email"
+                      class="form-control"
+                      placeholder="seu@email.com" />
+                  </div>
+                </div>
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Telefone</label>
+                    <input
+                      id="candidato-telefone"
+                      type="tel"
+                      class="form-control"
+                      placeholder="(11) 90000-0000" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Cidade</label>
+                    <input
+                      id="candidato-cidade"
+                      type="text"
+                      class="form-control"
+                      placeholder="Cidade / Estado" />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Currículo (PDF)</label>
+                  <input
+                    id="candidato-curriculo"
+                    type="file"
+                    accept="application/pdf"
+                    class="form-control" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">LinkedIn</label>
+                  <input
+                    id="candidato-linkedin"
+                    type="url"
+                    class="form-control"
+                    placeholder="https://linkedin.com/in/seu-perfil" />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Carta de apresentação</label>
+                  <textarea
+                    id="candidato-apresentacao"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Conte brevemente por que você é a escolha certa..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Candidatar-se
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-xl-5">
+            <div
+              class="card rounded-4 shadow-sm border-0 p-4 bg-primary text-white">
+              <h4 class="mb-3">Dica profissional</h4>
+              <p class="mb-3">
+                Revise seu currículo antes de enviar e personalize o texto para
+                cada oportunidade. Isso aumenta sua visibilidade com
+                recrutadores.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <i class="fa-solid fa-check me-2"></i>Use um título
+                  profissional claro
+                </li>
+                <li>
+                  <i class="fa-solid fa-check me-2"></i>Inclua experiência
+                  recente
+                </li>
+                <li>
+                  <i class="fa-solid fa-check me-2"></i>Adicione links de perfil
+                  profissional
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
+    </main>
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4">
+        <div class="row gy-4">
+          <div class="col-md-4">
             <h3 class="footer-logo">
               Hiring <span class="brand-highlight">UP</span>
             </h3>
-            <p>Conectando talentos às grandes oportunidades.</p>
+            <p>
+              Conectando talentos e empresas com inteligência, confiança e
+              agilidade.
+            </p>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-md-2">
             <h5>Links Rápidos</h5>
             <ul>
-              <li><a href="vagas.html">Buscar Vagas</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="vagas.html">Vagas</a></li>
               <li><a href="empresas.html">Empresas</a></li>
-              <li><a href="nova-vaga.html">Publicar Vagas</a></li>
-              <li><a href="acompanhamento.html">Acompanhamento</a></li>
-              <li><a href="relatorios.html">Relatórios</a></li>
+              <li><a href="sobrenos.html">Sobre Nós</a></li>
             </ul>
           </div>
-          <div class="col-lg-4 mb-4">
-            <h5>Recursos</h5>
+          <div class="col-md-2">
+            <h5>Plataforma</h5>
             <ul>
-              <li><a href="cadastro.html">Cadastre Grátis</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="sobrenos.html">Sobre Nós</a></li>
+              <li><a href="perfil.html">Meu Perfil</a></li>
+              <li><a href="nova-vaga.html">Publicar Vaga</a></li>
+              <li><a href="acompanhamento.html">Acompanhar</a></li>
+              <li><a href="candidatura.html">Candidatura</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Contato</h5>
+            <ul>
+              <li><a href="contato.html">Entre em Contato</a></li>
+              <p class="mb-1">suporte@hiringup.com.br</p>
+              <p>(11) 4000-1234</p>
+              <p class="small mt-3">
+                <li><a href="termos.html">Termos de Uso</a></li>
+                <li><a href="privacidade.html">Política de Privacidade</a></li>
+              </p>
             </ul>
           </div>
         </div>
         <hr />
-        <div class="footer-bottom">
-          © 2026 Hiring <span class="brand-highlight">UP</span> - Todos os
-          direitos reservados.
+        <div class="footer-bottom text-center">
+          © 2026 Hiring UP - Todos os direitos reservados.
         </div>
       </div>
     </footer>

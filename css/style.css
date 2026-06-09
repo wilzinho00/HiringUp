@@ -978,6 +978,89 @@ img{
     font-size:15px;
 }
 
+/* DASHBOARD / RELATÓRIOS */
+
+.stat-card{
+    border-radius:24px;
+    transition:.3s ease;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+}
+
+.dashboard-number{
+    font-size:3rem;
+    font-weight:900;
+    color:#173ea5;
+}
+
+.timeline{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.timeline-step{
+    display:grid;
+    grid-template-columns:58px 1fr;
+    gap:18px;
+    align-items:center;
+    padding:20px 0;
+    border-bottom:1px solid rgba(23,62,165,.08);
+}
+
+.timeline-step:last-child{
+    border-bottom:none;
+}
+
+.timeline-step.active .step-icon{
+    background:#173ea5;
+    color:#fff;
+}
+
+.step-icon{
+    width:58px;
+    height:58px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e9efff;
+    color:#173ea5;
+    font-weight:800;
+    font-size:1rem;
+}
+
+.status-badge{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.9rem;
+}
+
+.status-aprovado{
+    background:#e6f4ea;
+    color:#198754;
+}
+
+.status-entrevista{
+    background:#eaf4ff;
+    color:#0d6efd;
+}
+
+.status-analise{
+    background:#fff4e6;
+    color:#ff7a00;
+}
+
+@media (max-width: 768px) {
+    .timeline-step{
+        grid-template-columns:1fr;
+    }
+}
+
 .register-link a{
     text-decoration:none;
 

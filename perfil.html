@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil - Hiring UP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold logo" href="index.html">
+          <h1>Hiring <span class="brand-highlight">UP</span></h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vagas.html">Vagas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="empresas.html">Empresas</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="portalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Portal Empresarial</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="portalDropdown">
+                <li>
+                  <a class="dropdown-item" href="nova-vaga.html"
+                    >Publicar Vaga</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="relatorios.html">Relatórios</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="perfilDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Meu Perfil</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                <li>
+                  <a class="dropdown-item" href="perfil.html">Dashboard</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="curriculoup.html"
+                    >Currículo UP</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="acompanhamento.html"
+                    >Minhas Candidaturas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="perfil.html#configuracoes"
+                    >Configurações</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="login.html">Sair</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
+            </li>
+          </ul>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="login.html" class="btn btn-outline-primary cadastro-btn"
+              >Entrar</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="profile-page py-5">
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-4 mb-5">
+          <div>
+            <h1 class="fw-bold">
+              Olá, <span id="profile-name">Profissional</span> 👋
+            </h1>
+            <p class="lead text-muted">Bem-vindo à sua área profissional.</p>
+          </div>
+          <div class="profile-badge p-4 rounded-4 shadow-sm bg-white border">
+            <div class="d-flex align-items-center gap-3">
+              <div
+                class="profile-avatar rounded-circle bg-primary text-white d-flex align-items-center justify-content-center">
+                AB
+              </div>
+              <div>
+                <h5 id="profile-title">Cargo Desejado</h5>
+                <p id="profile-location" class="mb-0 text-muted">
+                  Cidade, Estado
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-6 col-xl-3">
+            <div class="stat-card card border-0 rounded-4 shadow-sm p-4">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <h6 class="text-uppercase text-secondary mb-1">
+                    Currículos enviados
+                  </h6>
+                  <h2 id="stat-curriculos" class="mb-0">0</h2>
+                </div>
+                <div class="stat-icon bg-primary text-white rounded-3">
+                  <i class="fa-solid fa-file-lines"></i>
+                </div>
+              </div>
+              <p class="text-muted small">
+                Perfil completo e seus documentos enviados.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="stat-card card border-0 rounded-4 shadow-sm p-4">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <h6 class="text-uppercase text-secondary mb-1">
+                    Candidaturas ativas
+                  </h6>
+                  <h2 id="stat-candidaturas" class="mb-0">0</h2>
+                </div>
+                <div class="stat-icon bg-warning text-white rounded-3">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+              </div>
+              <p class="text-muted small">
+                Oportunidades que estão em análise ou aguardando retorno.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="stat-card card border-0 rounded-4 shadow-sm p-4">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <h6 class="text-uppercase text-secondary mb-1">
+                    Entrevistas agendadas
+                  </h6>
+                  <h2 id="stat-entrevistas" class="mb-0">0</h2>
+                </div>
+                <div class="stat-icon bg-success text-white rounded-3">
+                  <i class="fa-solid fa-calendar-check"></i>
+                </div>
+              </div>
+              <p class="text-muted small">
+                Acompanhe suas próximas entrevistas e datas importantes.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="stat-card card border-0 rounded-4 shadow-sm p-4">
+              <div
+                class="d-flex align-items-center justify-content-between mb-3">
+                <div>
+                  <h6 class="text-uppercase text-secondary mb-1">Aprovações</h6>
+                  <h2 id="stat-aprovacoes" class="mb-0">0</h2>
+                </div>
+                <div class="stat-icon bg-info text-white rounded-3">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+              <p class="text-muted small">
+                Vagas que avançaram para a próxima etapa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <section class="dashboard-actions mb-5">
+          <div class="row g-4">
+            <div class="col-md-6 col-xl-4">
+              <a
+                href="cadastro.html"
+                class="action-card card rounded-4 shadow-sm border-0 p-4 text-decoration-none text-dark h-100">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h5>Meu Currículo</h5>
+                    <p class="text-muted mb-0">
+                      Atualize suas experiências e formação.
+                    </p>
+                  </div>
+                  <span class="action-icon rounded-3 bg-primary text-white"
+                    ><i class="fa-solid fa-file-arrow-up"></i
+                  ></span>
+                </div>
+                <small class="text-secondary">Perfil 92% completo</small>
+              </a>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <a
+                href="acompanhamento.html"
+                class="action-card card rounded-4 shadow-sm border-0 p-4 text-decoration-none text-dark h-100">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h5>Minhas Candidaturas</h5>
+                    <p class="text-muted mb-0">
+                      Resumo das oportunidades enviadas.
+                    </p>
+                  </div>
+                  <span class="action-icon rounded-3 bg-warning text-white"
+                    ><i class="fa-solid fa-list-check"></i
+                  ></span>
+                </div>
+                <small class="text-secondary"
+                  >Veja o status em tempo real</small
+                >
+              </a>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <a
+                href="acompanhamento.html"
+                class="action-card card rounded-4 shadow-sm border-0 p-4 text-decoration-none text-dark h-100">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h5>Acompanhamento</h5>
+                    <p class="text-muted mb-0">
+                      Controle seu processo seletivo.
+                    </p>
+                  </div>
+                  <span class="action-icon rounded-3 bg-success text-white"
+                    ><i class="fa-solid fa-chart-line"></i
+                  ></span>
+                </div>
+                <small class="text-secondary"
+                  >Timeline de cada candidatura</small
+                >
+              </a>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <a
+                href="vagas.html"
+                class="action-card card rounded-4 shadow-sm border-0 p-4 text-decoration-none text-dark h-100">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h5>Vagas Favoritas</h5>
+                    <p class="text-muted mb-0">
+                      Salve oportunidades estratégicas.
+                    </p>
+                  </div>
+                  <span class="action-icon rounded-3 bg-info text-white"
+                    ><i class="fa-solid fa-heart"></i
+                  ></span>
+                </div>
+                <small class="text-secondary"
+                  >Novas vagas adicionadas diariamente</small
+                >
+              </a>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <a
+                href="perfil.html#configuracoes"
+                class="action-card card rounded-4 shadow-sm border-0 p-4 text-decoration-none text-dark h-100">
+                <div
+                  class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h5>Configurações</h5>
+                    <p class="text-muted mb-0">
+                      Personalize sua experiência na plataforma.
+                    </p>
+                  </div>
+                  <span class="action-icon rounded-3 bg-secondary text-white"
+                    ><i class="fa-solid fa-gear"></i
+                  ></span>
+                </div>
+                <small class="text-secondary"
+                  >Preferências, notificações e conta</small
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="insights-section mb-5">
+          <div class="card rounded-4 shadow-sm border-0 p-4">
+            <div
+              class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+              <div>
+                <h5 class="mb-2">Performance de candidatura</h5>
+                <p class="text-muted mb-0">
+                  Visão geral do andamento das suas candidaturas mais recentes.
+                </p>
+              </div>
+              <a href="acompanhamento.html" class="btn btn-outline-primary"
+                >Ver todos os detalhes</a
+              >
+            </div>
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="insight-bar">
+                  <div class="insight-title">Candidaturas abertas</div>
+                  <div class="progress rounded-pill bg-light">
+                    <div
+                      id="bar-candidaturas"
+                      class="progress-bar bg-primary rounded-pill"
+                      role="progressbar"
+                      style="width: 0%"></div>
+                  </div>
+                  <div class="text-muted small mt-2" id="label-candidaturas">
+                    0 novas
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="insight-bar">
+                  <div class="insight-title">Entrevistas agendadas</div>
+                  <div class="progress rounded-pill bg-light">
+                    <div
+                      id="bar-entrevistas"
+                      class="progress-bar bg-success rounded-pill"
+                      role="progressbar"
+                      style="width: 0%"></div>
+                  </div>
+                  <div class="text-muted small mt-2" id="label-entrevistas">
+                    0 agendadas
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="insight-bar">
+                  <div class="insight-title">Aprovações</div>
+                  <div class="progress rounded-pill bg-light">
+                    <div
+                      id="bar-aprovacoes"
+                      class="progress-bar bg-warning rounded-pill"
+                      role="progressbar"
+                      style="width: 0%"></div>
+                  </div>
+                  <div class="text-muted small mt-2" id="label-aprovacoes">
+                    0 aprovadas
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="configuracoes" class="settings-section">
+          <div class="card rounded-4 shadow-sm border-0 p-4">
+            <h5 class="mb-3">Configurações de conta</h5>
+            <p class="text-muted">
+              Ajuste suas preferências de notificação e segurança.
+            </p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <button class="btn btn-outline-primary w-100">
+                  Gerenciar notificações
+                </button>
+              </div>
+              <div class="col-md-6">
+                <button class="btn btn-outline-secondary w-100">
+                  Editar perfil
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <h3 class="footer-logo">
+              Hiring <span class="brand-highlight">UP</span>
+            </h3>
+            <p>
+              Conectando talentos e empresas com inteligência, confiança e
+              agilidade.
+            </p>
+          </div>
+          <div class="col-md-2">
+            <h5>Links Rápidos</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="vagas.html">Vagas</a></li>
+              <li><a href="empresas.html">Empresas</a></li>
+              <li><a href="sobrenos.html">Sobre Nós</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Plataforma</h5>
+            <ul>
+              <li><a href="perfil.html">Meu Perfil</a></li>
+              <li><a href="nova-vaga.html">Publicar Vaga</a></li>
+              <li><a href="acompanhamento.html">Acompanhar</a></li>
+              <li><a href="candidatura.html">Candidatura</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Contato</h5>
+            <ul>
+              <li><a href="contato.html">Entre em Contato</a></li>
+              <p class="mb-1">suporte@hiringup.com.br</p>
+              <p>(11) 4000-1234</p>
+              <p class="small mt-3">
+                <li><a href="termos.html">Termos de Uso</a></li>
+                <li><a href="privacidade.html">Política de Privacidade</a></li>
+              </p>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="footer-bottom text-center">
+          © 2026 Hiring UP - Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

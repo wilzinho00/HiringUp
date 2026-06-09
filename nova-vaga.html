@@ -13,14 +13,12 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold logo" href="index.html">
           <h1>Hiring <span class="brand-highlight">UP</span></h1>
         </a>
-
         <button
           class="navbar-toggler"
           type="button"
@@ -28,7 +26,6 @@
           data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
@@ -40,114 +37,185 @@
             <li class="nav-item">
               <a class="nav-link" href="empresas.html">Empresas</a>
             </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="portalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Portal Empresarial</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="portalDropdown">
+                <li>
+                  <a class="dropdown-item" href="nova-vaga.html"
+                    >Publicar Vaga</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="relatorios.html">Relatórios</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="perfilDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Meu Perfil</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                <li>
+                  <a class="dropdown-item" href="perfil.html">Dashboard</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="cadastro.html">Currículo</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="acompanhamento.html"
+                    >Minhas Candidaturas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="perfil.html#configuracoes"
+                    >Configurações</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="login.html">Sair</a></li>
+              </ul>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="nova-vaga.html">Publicar Vagas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="acompanhamento.html">Acompanhamento</a>
-            </li>
           </ul>
           <div class="d-flex gap-3 align-items-center">
-            <a href="cadastro.html" class="btn btn-primary cadastro-btn">
-              Cadastre Grátis
-            </a>
+            <a href="login.html" class="btn btn-outline-primary cadastro-btn"
+              >Entrar</a
+            >
           </div>
         </div>
       </div>
     </nav>
 
-    <section class="jobs-section">
+    <main class="py-5">
       <div class="container">
-        <div class="row align-items-center gy-5">
+        <div class="row align-items-center gy-5 mb-4">
           <div class="col-lg-6">
-            <h1 class="section-title">Área Empresas</h1>
+            <h1 class="fw-bold">Portal Empresarial</h1>
             <p class="text-muted">
-              Publique vagas estratégicas e acompanhe todo o processo de
-              seleção.
+              Publicar vagas, acompanhar candidatos e acessar relatórios em um
+              painel corporativo.
             </p>
             <div class="dashboard-card mt-4">
-              <h5>Acesso Exclusivo Empresas</h5>
+              <h5>Fluxo otimizado</h5>
               <p class="text-muted mb-0">
-                Cadastre novas oportunidades com rapidez e alcance candidatos
-                qualificados pelo Hiring UP.
+                Insira suas oportunidades e veja o talento certo chegar até sua
+                equipe.
               </p>
             </div>
           </div>
-
           <div class="col-lg-6">
-            <div class="form-card">
-              <h2 class="form-title">Cadastrar Nova Vaga</h2>
-
-              <div id="nova-vaga-feedback"></div>
-
-              <form id="nova-vaga-form">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label">Cargo</label>
+            <div class="card rounded-4 shadow-sm border-0 p-4">
+              <h4 class="mb-4">Cadastrar Nova Vaga</h4>
+              <div id="empresa-feedback"></div>
+              <form id="empresa-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Título da vaga</label>
                     <input
-                      id="vaga-title"
+                      id="empresa-vaga"
                       type="text"
                       class="form-control"
                       placeholder="Ex: Desenvolvedor Full Stack" />
                   </div>
-
-                  <div class="col-md-6 mb-3">
+                  <div class="col-md-6">
                     <label class="form-label">Empresa</label>
                     <input
-                      id="vaga-company"
+                      id="empresa-nome"
                       type="text"
                       class="form-control"
                       placeholder="Ex: Hiring UP" />
                   </div>
-
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label">Localização</label>
+                  <div class="col-md-6">
+                    <label class="form-label">Cidade</label>
                     <input
-                      id="vaga-location"
+                      id="empresa-cidade"
                       type="text"
                       class="form-control"
-                      placeholder="Cidade ou remoto" />
+                      placeholder="Cidade" />
                   </div>
-
-                  <div class="col-md-6 mb-3">
-                    <label class="form-label">Faixa Salarial</label>
+                  <div class="col-md-6">
+                    <label class="form-label">Estado</label>
                     <input
-                      id="vaga-salary"
+                      id="empresa-estado"
+                      type="text"
+                      class="form-control"
+                      placeholder="Estado" />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Modelo de trabalho</label>
+                    <select id="empresa-modalidade" class="form-control">
+                      <option value="Remoto">Remoto</option>
+                      <option value="Presencial">Presencial</option>
+                      <option value="Híbrido">Híbrido</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Faixa salarial</label>
+                    <input
+                      id="empresa-salario"
                       type="text"
                       class="form-control"
                       placeholder="R$ 8.000 - R$ 12.000" />
                   </div>
-
-                  <div class="col-12 mb-3">
-                    <label class="form-label">Modalidade</label>
-                    <select class="form-control">
-                      <option>Remoto</option>
-                      <option>Presencial</option>
-                      <option>Híbrido</option>
-                    </select>
-                  </div>
-
-                  <div class="col-12 mb-3">
-                    <label class="form-label">Descrição da Vaga</label>
-                    <textarea
+                  <div class="col-md-6">
+                    <label class="form-label">Quantidade de vagas</label>
+                    <input
+                      id="empresa-quantidade"
+                      type="number"
+                      min="1"
                       class="form-control"
-                      rows="5"
-                      placeholder="Descreva a oportunidade."></textarea>
+                      placeholder="1" />
                   </div>
-
-                  <div class="col-12 mb-4">
-                    <label class="form-label">Requisitos</label>
+                  <div class="col-12">
+                    <label class="form-label">Descrição</label>
                     <textarea
+                      id="empresa-descricao-vaga"
                       class="form-control"
                       rows="4"
-                      placeholder="Liste os requisitos essenciais."></textarea>
+                      placeholder="Detalhes da oportunidade"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Requisitos</label>
+                    <textarea
+                      id="empresa-requisitos"
+                      class="form-control"
+                      rows="3"
+                      placeholder="Principais requisitos"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Benefícios</label>
+                    <textarea
+                      id="empresa-beneficios"
+                      class="form-control"
+                      rows="3"
+                      placeholder="Ex: Vale refeição, plano de saúde, etc."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">E-mail de contato</label>
+                    <input
+                      id="empresa-email"
+                      type="email"
+                      class="form-control"
+                      placeholder="contato@empresa.com" />
                   </div>
                 </div>
-
-                <button type="submit" class="btn cadastro-btn w-100">
+                <button type="submit" class="btn btn-primary btn-lg mt-4 w-100">
                   Publicar Vaga
                 </button>
               </form>
@@ -155,40 +223,55 @@
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4">
+        <div class="row gy-4">
+          <div class="col-md-4">
             <h3 class="footer-logo">
               Hiring <span class="brand-highlight">UP</span>
             </h3>
-            <p>Conectando talentos às grandes oportunidades.</p>
+            <p>
+              Conectando talentos e empresas com inteligência, confiança e
+              agilidade.
+            </p>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-md-2">
             <h5>Links Rápidos</h5>
             <ul>
-              <li><a href="vagas.html">Buscar Vagas</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="vagas.html">Vagas</a></li>
               <li><a href="empresas.html">Empresas</a></li>
-              <li><a href="nova-vaga.html">Publicar Vagas</a></li>
-              <li><a href="acompanhamento.html">Acompanhamento</a></li>
-              <li><a href="relatorios.html">Relatórios</a></li>
+              <li><a href="sobrenos.html">Sobre Nós</a></li>
             </ul>
           </div>
-          <div class="col-lg-4 mb-4">
-            <h5>Recursos</h5>
+          <div class="col-md-2">
+            <h5>Plataforma</h5>
             <ul>
-              <li><a href="cadastro.html">Cadastre Grátis</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="sobrenos.html">Sobre Nós</a></li>
+              <li><a href="perfil.html">Meu Perfil</a></li>
+              <li><a href="nova-vaga.html">Publicar Vaga</a></li>
+              <li><a href="acompanhamento.html">Acompanhar</a></li>
+              <li><a href="candidatura.html">Candidatura</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Contato</h5>
+            <ul>
+              <li><a href="contato.html">Entre em Contato</a></li>
+              <p class="mb-1">suporte@hiringup.com.br</p>
+              <p>(11) 4000-1234</p>
+              <p class="small mt-3">
+                <li><a href="termos.html">Termos de Uso</a></li>
+                <li><a href="privacidade.html">Política de Privacidade</a></li>
+              </p>
             </ul>
           </div>
         </div>
         <hr />
-        <div class="footer-bottom">
-          © 2026 Hiring <span class="brand-highlight">UP</span> - Todos os
-          direitos reservados.
+        <div class="footer-bottom text-center">
+          © 2026 Hiring UP - Todos os direitos reservados.
         </div>
       </div>
     </footer>

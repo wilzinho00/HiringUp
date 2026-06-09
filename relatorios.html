@@ -13,14 +13,12 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold logo" href="index.html">
-          Hiring <span class="brand-highlight">UP</span>
+          <h1>Hiring <span class="brand-highlight">UP</span></h1>
         </a>
-
         <button
           class="navbar-toggler"
           type="button"
@@ -28,7 +26,6 @@
           data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
@@ -40,137 +37,208 @@
             <li class="nav-item">
               <a class="nav-link" href="empresas.html">Empresas</a>
             </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="portalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Portal Empresarial</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="portalDropdown">
+                <li>
+                  <a class="dropdown-item" href="nova-vaga.html"
+                    >Publicar Vaga</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="relatorios.html">Relatórios</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="perfilDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Meu Perfil</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                <li>
+                  <a class="dropdown-item" href="perfil.html">Dashboard</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="cadastro.html">Currículo</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="acompanhamento.html"
+                    >Minhas Candidaturas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="perfil.html#configuracoes"
+                    >Configurações</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="login.html">Sair</a></li>
+              </ul>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="nova-vaga.html">Publicar Vagas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="acompanhamento.html">Acompanhamento</a>
-            </li>
           </ul>
           <div class="d-flex gap-3 align-items-center">
-            <a href="cadastro.html" class="btn btn-primary cadastro-btn">
-              Cadastre Grátis
-            </a>
+            <a href="login.html" class="btn btn-outline-primary cadastro-btn"
+              >Entrar</a
+            >
           </div>
         </div>
       </div>
     </nav>
 
-    <section class="jobs-section">
+    <main class="py-5">
       <div class="container">
         <div class="alert alert-info rounded-4 shadow-sm mb-4">
           <strong>Acesso exclusivo para empresas.</strong> Utilize este painel
           para acompanhar resultados e cadastrar novas vagas.
         </div>
         <div class="d-flex justify-content-end mb-4">
-          <a href="nova-vaga.html" class="btn cadastro-btn"
+          <a href="nova-vaga.html" class="btn btn-primary"
             >Cadastrar Nova Vaga</a
           >
         </div>
-        <h2 class="section-title">Relatórios Gerenciais</h2>
-
+        <div
+          class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-5">
+          <div>
+            <h1 class="fw-bold">Relatórios Gerenciais</h1>
+            <p class="text-muted">
+              Métricas atualizadas para nortear decisões de recrutamento e
+              acelerar contratações.
+            </p>
+          </div>
+        </div>
         <div class="row g-4 mb-5">
-          <div class="col-md-3">
-            <div class="dashboard-card text-center">
-              <div class="dashboard-number">18</div>
-              <p>Vagas Ativas</p>
+          <div class="col-sm-6 col-xl-3">
+            <div
+              class="stat-card card border-0 rounded-4 shadow-sm p-4 text-center">
+              <h6 class="text-uppercase text-secondary mb-2">Total de vagas</h6>
+              <div id="report-open-jobs" class="dashboard-number">0</div>
             </div>
           </div>
-
-          <div class="col-md-3">
-            <div class="dashboard-card text-center">
-              <div class="dashboard-number">124</div>
-              <p>Candidatos</p>
+          <div class="col-sm-6 col-xl-3">
+            <div
+              class="stat-card card border-0 rounded-4 shadow-sm p-4 text-center">
+              <h6 class="text-uppercase text-secondary mb-2">Vagas abertas</h6>
+              <div id="report-open-jobs-active" class="dashboard-number">0</div>
             </div>
           </div>
-
-          <div class="col-md-3">
-            <div class="dashboard-card text-center">
-              <div class="dashboard-number">34</div>
-              <p>Entrevistas</p>
+          <div class="col-sm-6 col-xl-3">
+            <div
+              class="stat-card card border-0 rounded-4 shadow-sm p-4 text-center">
+              <h6 class="text-uppercase text-secondary mb-2">
+                Total de candidatos
+              </h6>
+              <div id="report-candidates" class="dashboard-number">0</div>
             </div>
           </div>
-
-          <div class="col-md-3">
-            <div class="dashboard-card text-center">
-              <div class="dashboard-number">12</div>
-              <p>Contratações</p>
+          <div class="col-sm-6 col-xl-3">
+            <div
+              class="stat-card card border-0 rounded-4 shadow-sm p-4 text-center">
+              <h6 class="text-uppercase text-secondary mb-2">
+                Entrevistas realizadas
+              </h6>
+              <div id="report-interviews" class="dashboard-number">0</div>
             </div>
           </div>
         </div>
-
-        <div class="dashboard-card">
-          <h4 class="mb-4">Resumo das Vagas</h4>
-
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Vaga</th>
-                <th>Candidatos</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>Front-End</td>
-                <td>28</td>
-              </tr>
-
-              <tr>
-                <td>Analista de Dados</td>
-                <td>19</td>
-              </tr>
-
-              <tr>
-                <td>UX/UI Designer</td>
-                <td>14</td>
-              </tr>
-
-              <tr>
-                <td>Dev Full Stack</td>
-                <td>32</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="row g-4 mb-5">
+          <div class="col-lg-4">
+            <div
+              class="stat-card card border-0 rounded-4 shadow-sm p-4 text-center">
+              <h6 class="text-uppercase text-secondary mb-2">Contratações</h6>
+              <div id="report-hires" class="dashboard-number">0</div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card rounded-4 shadow-sm border-0 p-4">
+              <h4 class="mb-4">Resumo das Vagas</h4>
+              <div class="table-responsive">
+                <table class="table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Vaga</th>
+                      <th>Empresa</th>
+                      <th>Data</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reports-table-body">
+                    <tr>
+                      <td colspan="4" class="text-center text-muted py-4">
+                        Nenhuma vaga publicada ainda.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-
+    </main>
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4">
+        <div class="row gy-4">
+          <div class="col-md-4">
             <h3 class="footer-logo">
               Hiring <span class="brand-highlight">UP</span>
             </h3>
-            <p>Conectando talentos às grandes oportunidades.</p>
+            <p>
+              Conectando talentos e empresas com inteligência, confiança e
+              agilidade.
+            </p>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-md-2">
             <h5>Links Rápidos</h5>
             <ul>
-              <li><a href="vagas.html">Buscar Vagas</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="vagas.html">Vagas</a></li>
               <li><a href="empresas.html">Empresas</a></li>
-              <li><a href="nova-vaga.html">Publicar Vagas</a></li>
-              <li><a href="acompanhamento.html">Acompanhamento</a></li>
-              <li><a href="relatorios.html">Relatórios</a></li>
+              <li><a href="sobrenos.html">Sobre Nós</a></li>
             </ul>
           </div>
-          <div class="col-lg-4 mb-4">
-            <h5>Recursos</h5>
+          <div class="col-md-2">
+            <h5>Plataforma</h5>
             <ul>
-              <li><a href="cadastro.html">Cadastre Grátis</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="sobrenos.html">Sobre Nós</a></li>
+              <li><a href="perfil.html">Meu Perfil</a></li>
+              <li><a href="nova-vaga.html">Publicar Vaga</a></li>
+              <li><a href="acompanhamento.html">Acompanhar</a></li>
+              <li><a href="candidatura.html">Candidatura</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <h5>Contato</h5>
+            <ul>
+              <li><a href="contato.html">Entre em Contato</a></li>
+              <p class="mb-1">suporte@hiringup.com.br</p>
+              <p>(11) 4000-1234</p>
+              <p class="small mt-3">
+                <li><a href="termos.html">Termos de Uso</a></li>
+                <li><a href="privacidade.html">Política de Privacidade</a></li>
+              </p>
             </ul>
           </div>
         </div>
         <hr />
-        <div class="footer-bottom">
-          © 2026 Hiring <span class="brand-highlight">UP</span> - Todos os
-          direitos reservados.
+        <div class="footer-bottom text-center">
+          © 2026 Hiring UP - Todos os direitos reservados.
         </div>
       </div>
     </footer>
