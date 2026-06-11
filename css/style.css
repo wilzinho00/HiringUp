@@ -320,6 +320,91 @@ img{
 }
 
 /* =========================
+   HERO TERMOS E PRIVACIDADE
+========================= */
+
+.hero-termos{
+    position: relative;
+    min-height: 320px;
+
+    background:
+    linear-gradient(
+      rgba(15,23,42,0.75),
+      rgba(15,23,42,0.75)
+    ),
+    url('../img/sloganJobNavigator.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #fff;
+
+    padding: 100px 20px;
+}
+
+.hero-termos h1{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-termos p{
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: .95;
+}
+
+/* =========================
+   HERO POLÍTICA DE PRIVACIDADE
+========================= */
+
+.hero-privacidade{
+    position: relative;
+    min-height: 320px;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,.75),
+        rgba(15,23,42,.75)
+    ),
+    url('../img/sloganJobNavigator.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #fff;
+
+    padding: 100px 20px;
+}
+
+.hero-privacidade h1{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-privacidade p{
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: .95;
+}
+
+
+/* =========================
    SEARCH BOX (UPGRADE PRO)
 ========================= */
 
