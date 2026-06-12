@@ -14,32 +14,95 @@
   </head>
 
   <body class="bg-light">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold logo" href="index.html">
-          <h2 class="fw-bold mb-4">
-            Hiring <span class="brand-highlight">UP</span>
-          </h2>
+          <h1>Hiring <span class="brand-highlight">UP</span></h1>
         </a>
         <button
           class="navbar-toggler"
+          type="button"
           data-bs-toggle="collapse"
           data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="vagas.html">Vagas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="curriculoup.html"
-                >Currículo UP</a
+              <a class="nav-link" href="empresas.html">Empresas</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="portalDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Portal Empresarial</a
               >
+              <ul class="dropdown-menu" aria-labelledby="portalDropdown">
+                <li>
+                  <a class="dropdown-item" href="nova-vaga.html"
+                    >Publicar Vaga</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="relatorios.html">Relatórios</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="perfilDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Meu Perfil</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="perfilDropdown">
+                <li>
+                  <a class="dropdown-item" href="perfil.html">Dashboard</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="cadastro.html">Currículo</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="acompanhamento.html"
+                    >Minhas Candidaturas</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="perfil.html#configuracoes"
+                    >Configurações</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="login.html">Sair</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="curriculoup.html">Currículo UP</a>
             </li>
           </ul>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="login.html" class="btn btn-outline-primary cadastro-btn"
+              >Entrar</a
+            >
+          </div>
         </div>
       </div>
     </nav>
