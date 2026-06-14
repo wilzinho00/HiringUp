@@ -15,14 +15,12 @@
 
   <body>
     <!-- NAVBAR -->
-
     <nav
       class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand fw-bold logo" href="index.html">
-          Hiring <span class="brand-highlight">UP</span>
+          <h1>Hiring <span class="brand-highlight">UP</span></h1>
         </a>
-
         <button
           class="navbar-toggler"
           type="button"
@@ -30,7 +28,6 @@
           data-bs-target="#menu">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
@@ -52,7 +49,16 @@
             <li class="nav-item">
               <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="configuracoes.html">Configurações</a>
+            </li>
           </ul>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="login.html" class="btn btn-outline-primary cadastro-btn"
+              >Entrar</a
+            >
+          </div>
         </div>
       </div>
     </nav>
@@ -235,20 +241,5 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-      const form = document.getElementById("config-form");
-      const feedback = document.getElementById("config-feedback");
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        feedback.innerHTML = `
-<div class="alert alert-success">
-Configurações atualizadas com sucesso.
-</div>
-`;
-      });
-    </script>
   </body>
 </html>
