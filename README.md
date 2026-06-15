@@ -127,9 +127,9 @@ Com foco em:
 # 👨‍💻 Equipe do Projeto
 
 - Bruno Henrique
-- Kainã
+- Kainã Alvez
 - Pedro Rogério
-- Wilciano
+- Wilciano Nascimento
 
 ---
 
